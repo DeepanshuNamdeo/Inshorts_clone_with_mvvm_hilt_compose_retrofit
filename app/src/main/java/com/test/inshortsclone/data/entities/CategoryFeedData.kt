@@ -1,9 +1,12 @@
 package com.test.inshortsclone.data.entities
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-data class CatagoryFeedData(
+@Entity
+data class CategoryFeedData(
     @SerializedName("author")
     val author: String,
     @SerializedName("content")
@@ -11,6 +14,7 @@ data class CatagoryFeedData(
     @SerializedName("date")
     val date: String,
     @SerializedName("id")
+    @PrimaryKey
     val id: String,
     @SerializedName("imageUrl")
     val imageUrl: String,

@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.test.inshortsclone.ui.navigation.screens.FeedHomeScreen
 import com.test.inshortsclone.ui.theme.InshortsCloneTheme
 import com.test.inshortsclone.ui.viewmodel.FeedViewModel
@@ -19,8 +20,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val viewModel: FeedViewModel by viewModels()
+    //private val viewModel: FeedViewModel by viewModels()
 
+    @OptIn(ExperimentalPagerApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -30,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    FeedHomeScreen(viewModel = viewModel)
+                    TabLayout(modifier = Modifier)
                 }
             }
         }

@@ -7,7 +7,7 @@ data class FeedResponse(
     @SerializedName("category")
     val category: String,
     @SerializedName("data")
-    val `data`: List<CatagoryFeedData>,
+    val `data`: List<CategoryFeedData>,
     @SerializedName("success")
     val success: Boolean
 )
