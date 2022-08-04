@@ -28,6 +28,7 @@ class FeedViewModel
 
     init {
         getFeeds()
+        getBookmarks()
     }
 
     fun getFeeds(category: String = "all") = viewModelScope.launch {
@@ -42,7 +43,7 @@ class FeedViewModel
 
     }
 
-    suspend fun getBookmarks() = viewModelScope.launch {
+     fun getBookmarks() = viewModelScope.launch {
         try {
             feedRepository.getListOfBookmark().collect() { bookmarks ->
                 if (bookmarks.isEmpty()) {
